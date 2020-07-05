@@ -1,0 +1,59 @@
+/*
+* Defines color
+*/
+$mainColor: #c6a869;
+$textColor: #353535;
+$subColor: #222127;
+$highGray: #f7f7f7;
+$trueGray: #ccc;
+$deepGray: #888;
+
+$gradation: linear-gradient(to left, #2543a8, #1d88af);
+$gradationTransparent: linear-gradient(to left, rgba(37, 68, 168, 0.9), rgba(29, 136, 175, 0.9));
+
+
+
+/*
+* Defines Media query
+*/
+$breakpoint-up: ( // min-width
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1000px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+$breakpoint-down: ( // max-width
+  'sm': 'screen and (max-width: 399px)',
+  'md': 'screen and (max-width: 767px)',
+  'lg': 'screen and (max-width: 999px)',
+  'xl': 'screen and (max-width: 1199px)',
+) !default;
+@mixin mq-up($breakpoint: md) { //メインで使用するブレイクポイントを指定
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+@mixin mq-down($breakpoint: md) { //メインで使用するブレイクポイントを指定
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+
+
+
+/*
+* Defines css component
+*/
+@mixin root() {
+  padding-top: 60px;
+  @include mq-up() {
+    padding-top: 0;
+  }
+}
+@mixin inner() {
+  padding: 60px 15px;
+  @include mq-up() {
+    margin-left: 230px;
+    padding: 0 80px;
+  }
+}
