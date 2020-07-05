@@ -23,12 +23,14 @@
         <Process class="about_process" :processes="processes" />
       </Section>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
 import Header from '@/components/layouts/Header.vue'
+import Footer from '@/components/layouts/Footer.vue'
 import Section from '@/components/layouts/Section.vue'
 import Breadcrumb from '@/components/modules/Breadcrumb.vue'
 import Lead from '@/components/modules/Lead.vue'
@@ -40,6 +42,7 @@ export default defineComponent({
   name: 'About',
   components: {
     Header,
+    Footer,
     Section,
     Breadcrumb,
     Lead,

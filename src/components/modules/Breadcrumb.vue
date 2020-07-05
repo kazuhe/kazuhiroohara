@@ -44,7 +44,6 @@ export default defineComponent({
       display: flex;
       align-items: center;
       a {
-        color: $deepGray;
         font-size: 1.4rem;
         font-weight: 500;
         &.router-link-active {

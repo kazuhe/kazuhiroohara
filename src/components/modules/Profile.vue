@@ -76,11 +76,8 @@ export default defineComponent({
     margin-top: 10px;
     a {
       font-size: 1.2rem;
-      color: $deepGray;
-      text-decoration: underline;
     }
     svg {
-      display: block;
       fill: $deepGray;
       width: 20px;
       margin-right: 5px;

@@ -151,13 +151,13 @@ export default defineComponent({
           display: flex;
           align-items: center;
           color: #fff;
-          font-size: 15px;
+          font-size: 1.5rem;
           font-weight: bold;
+          text-decoration: none;
           @include mq-up() {
             display: inline;
-            color: $deepGray;
             &.router-link-active {
-              color: #fff;
+              color: $mainColor;
             }
           }
           svg {

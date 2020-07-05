@@ -47,13 +47,17 @@ h3 {
   font-size: 1.8rem;
 }
 a {
-  text-decoration: none;
-  color: $textColor;
+  color: $deepGray;
   margin: 0;
   padding: 0;
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  @include mq-up() {
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 }
 ul {
   list-style: none;
@@ -63,6 +67,9 @@ img {
   border: none;
   border-style: none;
   vertical-align: top;
+}
+svg {
+  display: block;
 }
 article,
 aside,
