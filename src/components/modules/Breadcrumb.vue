@@ -31,14 +31,18 @@ export default defineComponent({
 
 <style lang="scss">
 .breadcrumb {
-  margin-top: 15px;
+  @include maxWidth();
 
   &_list {
     display: inline-flex;
     align-items: center;
+    margin-top: 15px;
     padding: 0 10px;
     background: $highGray;
     border-radius: 50px;
+    @include mq-up() {
+      margin-top: 30px;
+    }
     li {
       padding: 7px;
       display: flex;

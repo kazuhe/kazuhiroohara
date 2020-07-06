@@ -51,9 +51,15 @@ $breakpoint-down: ( // max-width
   }
 }
 @mixin inner() {
-  padding: 60px 15px;
+  padding: 0 15px;
   @include mq-up() {
     margin-left: 230px;
     padding: 0 80px;
+  }
+}
+@mixin maxWidth() {
+  @include mq-up() {
+    max-width: 800px;
+    margin: 0 auto;
   }
 }

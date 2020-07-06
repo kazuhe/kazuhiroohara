@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <Header />
-    <Breadcrumb :breadcrumbs="breadcrumbs" />
     <div class="home_inner">
       <p>
         munimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimunimuni
@@ -13,13 +12,11 @@
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
 import Header from '@/components/layouts/Header.vue'
-import Breadcrumb from '@/components/modules/Breadcrumb.vue'
 
 export default defineComponent({
   name: 'Home',
   components: {
-    Header,
-    Breadcrumb
+    Header
   },
   setup() {
     const breadcrumbs = reactive({

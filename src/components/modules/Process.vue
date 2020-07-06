@@ -29,20 +29,24 @@ export default defineComponent({
   li {
     position: relative;
     display: flex;
+    padding-bottom: 10px;
+    @include mq-up() {
+      padding-bottom: 20px;
+    }
     &::after {
       content: '';
       display: block;
       width: 1px;
-      height: calc(100% - 55px);
+      height: calc(100% - 45px);
       background: darken($highGray, 10%);
       position: absolute;
-      top: 55px;
+      top: 45px;
       left: 22.5px;
     }
   }
 
   li + li {
-    margin-top: 15px;
+    padding-bottom: 0;
   }
 
   &_mark {

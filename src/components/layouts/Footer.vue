@@ -43,10 +43,11 @@ export default defineComponent({
   }
 
   &_inner {
-    @include mq-up() {
-    }
+    @include maxWidth();
   }
   &_navi {
+    max-width: 500px;
+    margin: 0 auto;
     &_list {
       display: flex;
       align-items: center;

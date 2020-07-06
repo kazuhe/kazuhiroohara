@@ -1,6 +1,8 @@
 <template>
   <section class="section" :class="[{ '-gray': gray }, { '-dark': dark }]">
-    <slot />
+    <div class="section_inner">
+      <slot />
+    </div>
   </section>
 </template>
 
@@ -25,6 +27,13 @@ export default defineComponent({
 <style lang="scss">
 .section {
   margin-top: 30px;
+  @include mq-up() {
+    margin-top: 80px;
+  }
+
+  &_inner {
+    @include maxWidth();
+  }
 
   &.-gray {
     background: $highGray;
@@ -34,7 +43,7 @@ export default defineComponent({
     @include mq-up() {
       margin-left: -80px;
       margin-right: -80px;
-      padding: 30px 80px;
+      padding: 50px 80px;
     }
   }
 
@@ -47,7 +56,7 @@ export default defineComponent({
     @include mq-up() {
       margin-left: -80px;
       margin-right: -80px;
-      padding: 30px 80px;
+      padding: 50px 80px;
     }
   }
 }

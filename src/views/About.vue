@@ -7,9 +7,18 @@
         title="About Us"
         subTitle="Kazuhiro Ohara / 大原 一浩"
         text="2017年からWebデザイナー/フロントエンジニアとして活動しており、これまで数多くの中小企業様のコーポレートサイトやランディングページの制作に携わってきました。ヒアリングからWebサイトワイヤーフレームの作成、コーディングや印刷物の制作まで幅広く経験しています。"
+        image="about.jpg"
       />
+      <Section>
+        <Title h2="My History" />
+        <Process class="about_process" :processes="processes" />
+      </Section>
       <Section gray="true">
         <Title h2="Profile" />
+        <p>
+          私が最も大事にしている「コト」は人を想いやり尊重するコトです。
+          人とは、クライアントはもちろん共に働く仲間やターゲットとするユーザー全てを意味しています。人を想い行動することでよりよいサービスを提供することができ、自分自身も成長できると考えます。
+        </p>
         <Profile
           class="about_profile"
           image="profile.jpg"
@@ -17,10 +26,6 @@
           github="https://github.com/kazuhe"
           twitter="https://twitter.com/kazuhiroohara_"
         />
-      </Section>
-      <Section>
-        <Title h2="My History" />
-        <Process class="about_process" :processes="processes" />
       </Section>
     </div>
     <Footer />
@@ -84,7 +89,6 @@ export default defineComponent({
   @include root();
   &_inner {
     @include inner();
-    padding: 0 15px;
   }
 
   &_profile {

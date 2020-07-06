@@ -1,8 +1,10 @@
 <template>
-  <div class="lead">
-    <h1 class="lead_title">{{ title }}</h1>
-    <p class="lead_subTitle">{{ subTitle }}</p>
-    <p class="lead_text">{{ text }}</p>
+  <div class="lead" :class="{ '-image': image }" :style="loadImage()">
+    <div class="lead_inner">
+      <h1 class="lead_title">{{ title }}</h1>
+      <p class="lead_subTitle">{{ subTitle }}</p>
+      <p class="lead_text">{{ text }}</p>
+    </div>
   </div>
 </template>
 
@@ -22,6 +24,23 @@ export default defineComponent({
     },
     text: {
       type: String
+    },
+    image: {
+      type: String
+    }
+  },
+  setup(props) {
+    const loadImage = () => {
+      if (props.image) {
+        return {
+          'background-image': `url(${require(`@/assets/img/${props.image}`)})`
+        }
+      }
+      return false
+    }
+
+    return {
+      loadImage
     }
   }
 })
@@ -29,8 +48,48 @@ export default defineComponent({
 
 <style lang="scss">
 .lead {
-  &_title {
-    margin-top: 30px;
+  margin-top: 30px;
+  @include mq-up() {
+    margin-top: 50px;
+  }
+
+  &.-image {
+    position: relative;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -45px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 75px 15px 30px;
+    z-index: -1;
+    color: #fff;
+    .lead_subTitle {
+      color: #fff;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0,
+        rgba(0, 0, 0, 0.7) 100%
+      );
+      z-index: -1;
+    }
+    @include mq-up() {
+      margin-top: -60px;
+      margin-left: -80px;
+      margin-right: -80px;
+      padding: 110px 80px 80px;
+    }
+  }
+  &_inner {
+    @include maxWidth();
   }
 
   &_subTitle {
