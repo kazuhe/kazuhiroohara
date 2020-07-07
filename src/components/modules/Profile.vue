@@ -64,6 +64,7 @@ export default defineComponent({
     height: 100px;
     border-radius: 50%;
     margin-right: 15px;
+    flex-shrink: 0;
   }
 
   &_name {

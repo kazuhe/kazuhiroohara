@@ -43,10 +43,9 @@ export default defineComponent({
       top: 45px;
       left: 22.5px;
     }
-  }
-
-  li + li {
-    padding-bottom: 0;
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   &_mark {

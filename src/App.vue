@@ -92,9 +92,12 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #cccccc;
-  margin: 1em 0;
+  border-top: 1px solid $trueGray;
+  margin-top: 30px;
   padding: 0;
+  @include mq-up() {
+    margin-top: 80px;
+  }
 }
 input,
 select {
