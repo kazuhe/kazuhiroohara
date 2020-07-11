@@ -5,9 +5,9 @@
         <ul class="footer_navi_list">
           <li><router-link to="/">Home</router-link></li>
           <li><router-link to="/about">About</router-link></li>
-          <li><router-link to="/">Works</router-link></li>
+          <li><router-link to="/works">Works</router-link></li>
           <li>
-            <router-link to="/"><Book />Archive</router-link>
+            <a href="https://archive.kazuhiroohara.jp/"><Book />Archive</a>
           </li>
           <li>
             <router-link to="/"><Plane />Contact</router-link>
