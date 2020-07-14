@@ -1,9 +1,5 @@
 <template>
-  <div class="carousel">
-    {{ carousel.current }}
-    {{ carousel.carouselWidth }}
-    {{ carousel.element }}
-    {{ carouselElement }}
+  <div ref="root" class="carousel">
     <ul
       ref="wrap"
       class="carousel_list"
@@ -32,9 +28,7 @@ import Arrow from '@/components/svg/Arrow.vue'
 
 export default defineComponent({
   name: 'Carousel',
-  components: {
-    Arrow
-  },
+  components: { Arrow },
   props: {
     carouselElement: {
       type: Number,
@@ -51,13 +45,17 @@ export default defineComponent({
     })
 
     // カルーセルの横幅を取得
-    const getCarouselWidth = () => {
-      onMounted(() => {
-        carousel.carouselWidth = wrap.value.offsetWidth
-        return carousel.carouselWidth
+    let timeoutId: number
+    onMounted(() => {
+      carousel.carouselWidth = wrap.value.offsetWidth
+      window.addEventListener('resize', () => {
+        clearTimeout(timeoutId)
+        timeoutId = setTimeout(() => {
+          carousel.carouselWidth = wrap.value.offsetWidth
+          console.log('resize!')
+        }, 500)
       })
-    }
-    getCarouselWidth()
+    })
 
     // カルーセルのオフセットを指定
     const getOffset = computed(() => {
@@ -83,13 +81,40 @@ export default defineComponent({
       }
     }
 
+    // スマホスワイプ機能
+    const swipe = (target: HTMLElement) => {
+      let startX = 0
+      let moveX = 0
+      target.addEventListener('touchstart', (e: TouchEvent) => {
+        e.preventDefault()
+        startX = e.touches[0].pageX
+      })
+      target.addEventListener('touchmove', (e: TouchEvent) => {
+        e.preventDefault()
+        moveX = e.changedTouches[0].pageX
+      })
+      target.addEventListener('touchend', () => {
+        if (carousel.current < carousel.element - 1 && startX > moveX + 30) {
+          ++carousel.current
+        } else if (carousel.current > 0 && startX + 30 < moveX) {
+          --carousel.current
+        }
+      })
+    }
+    const root = ref()
+    onMounted(() => {
+      swipe(root.value)
+    })
+
     return {
       carousel,
       prevSlide,
       nextSlide,
       getOffset,
       getCurrentNavi,
-      wrap
+      wrap,
+      swipe,
+      root
     }
   }
 })
