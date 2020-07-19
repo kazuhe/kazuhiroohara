@@ -23,7 +23,7 @@ export default defineComponent({
 
 <style lang="scss">
 .title {
-  @include mq-up() {
+  @include mq-md() {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
@@ -34,7 +34,7 @@ export default defineComponent({
     color: $deepGray;
     font-weight: 600;
     margin-top: 5px;
-    @include mq-up() {
+    @include mq-md() {
       font-size: 1.3rem;
       margin-top: 0;
       margin-left: 15px;

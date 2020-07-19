@@ -13,7 +13,7 @@
         <Title h2="Experience and skills" p="今までの経験とスキル" />
         <List class="about_content" :lists="lists" />
       </Section>
-      <Section gray="true">
+      <Section :gray="true">
         <Title h2="Profile" p="プロフィール" />
         <p class="about_content">
           私が最も大事にしている「コト」は人を想いやり尊重するコトです。
@@ -119,7 +119,7 @@ export default defineComponent({
 
   &_content {
     margin-top: 15px;
-    @include mq-up() {
+    @include mq-md() {
       margin-top: 30px;
     }
   }

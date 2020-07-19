@@ -1,7 +1,7 @@
 <template>
-  <div class="about">
+  <div class="works">
     <Header />
-    <div class="about_inner">
+    <div class="works_inner">
       <Breadcrumb :breadcrumbs="breadcrumbs" />
       <Lead
         title="Works"
@@ -10,26 +10,29 @@
         image="works.jpg"
       />
       <Section>
-        <Title h2="Experience and skills" p="今までの経験とスキル" />
-        {{ carousel.carouselElement }}
-        <Carousel
-          :carouselElement="carousel.element"
-          class="about_content column"
-        >
-          <Slide>
-            <img class="column_image" src="@/assets/img/works.jpg" alt="" />
-          </Slide>
-          <Slide>
-            <img class="column_image" src="@/assets/img/about.jpg" alt="" />
-          </Slide>
-          <Slide>
-            <img class="column_image" src="@/assets/img/works.jpg" alt="" />
-          </Slide>
-        </Carousel>
+        <div class="works_flex">
+          <Carousel :carouselElement="carousel.element">
+            <Slide>
+              <img src="@/assets/img/pages/works/observable01.jpg" alt="" />
+            </Slide>
+            <Slide>
+              <img src="@/assets/img/pages/works/observable02.jpg" alt="" />
+            </Slide>
+            <Slide>
+              <img src="@/assets/img/pages/works/observable03.jpg" alt="" />
+            </Slide>
+            <Slide>
+              <img src="@/assets/img/pages/works/observable04.jpg" alt="" />
+            </Slide>
+          </Carousel>
+          <div class="works_content">
+            <Title h2="observable" p="タスク管理カレンダー" />
+          </div>
+        </div>
       </Section>
-      <Section gray="true">
-        <Title h2="Profile" p="プロフィール" />
-        <p class="about_content">
+      <Section :gray="true">
+        <Title h2="observable" p="タスク管理カレンダー" />
+        <p class="works_content">
           私が最も大事にしている「コト」は人を想いやり尊重するコトです。
           人とは、クライアントはもちろん共に働く仲間やターゲットとするユーザー全てを意味しています。人を想い行動することでよりよいサービスを提供することができ、自分自身も成長できると考えます。
         </p>
@@ -54,7 +57,7 @@ import Carousel from '@/components/modules/Carousel.vue'
 import Slide from '@/components/modules/Slide.vue'
 
 export default defineComponent({
-  name: 'About',
+  name: 'Works',
   components: {
     Header,
     Footer,
@@ -67,7 +70,7 @@ export default defineComponent({
   },
   setup() {
     const carousel = reactive({
-      element: 3
+      element: 4
     })
     const breadcrumbs = reactive({
       works: {
@@ -115,7 +118,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.about {
+.works {
   @include root();
   &_inner {
     @include inner();
@@ -123,16 +126,24 @@ export default defineComponent({
 
   &_content {
     margin-top: 15px;
-    @include mq-up() {
+    @include mq-md() {
       margin-top: 30px;
     }
   }
-}
 
-.column {
-  &_image {
-    box-shadow: 5px 5px 0 $highGray;
-    border-radius: 5px;
+  &_flex {
+    @include mq-lg() {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: -15px;
+      margin-right: -15px;
+      > div,
+      > ul {
+        width: 50%;
+        margin: 0 15px;
+      }
+    }
   }
 }
 </style>

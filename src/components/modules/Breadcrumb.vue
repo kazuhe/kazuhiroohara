@@ -40,7 +40,7 @@ export default defineComponent({
     padding: 0 10px;
     background: $highGray;
     border-radius: 50px;
-    @include mq-up() {
+    @include mq-md() {
       margin-top: 30px;
     }
     li {

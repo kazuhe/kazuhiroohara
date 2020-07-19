@@ -53,7 +53,7 @@ a {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
-  @include mq-up() {
+  @include mq-md() {
     &:hover {
       opacity: 0.5;
     }
@@ -95,7 +95,7 @@ hr {
   border-top: 1px solid $trueGray;
   margin-top: 30px;
   padding: 0;
-  @include mq-up() {
+  @include mq-md() {
     margin-top: 80px;
   }
 }

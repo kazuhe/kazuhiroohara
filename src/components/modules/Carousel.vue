@@ -130,6 +130,10 @@ export default defineComponent({
   }
 
   &_navi {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;

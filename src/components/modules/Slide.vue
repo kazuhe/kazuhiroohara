@@ -18,6 +18,9 @@ export default defineComponent({
     flex-basis: inherit;
     flex-grow: 0;
     flex-shrink: 0;
+    border: 1px solid $highGray;
+    border-radius: 5px;
+    overflow: hidden;
   }
 }
 </style>

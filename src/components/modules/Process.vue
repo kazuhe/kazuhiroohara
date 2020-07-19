@@ -30,7 +30,7 @@ export default defineComponent({
     position: relative;
     display: flex;
     padding-bottom: 10px;
-    @include mq-up() {
+    @include mq-md() {
       padding-bottom: 20px;
     }
     &::after {

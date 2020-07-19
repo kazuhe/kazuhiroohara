@@ -36,7 +36,7 @@ export default defineComponent({
   padding: 30px 15px;
   background: $highGray;
   border-bottom: 15px solid $subColor;
-  @include mq-up() {
+  @include mq-md() {
     margin-top: 80px;
     margin-left: 230px;
     padding: 50px 80px;
@@ -56,7 +56,7 @@ export default defineComponent({
         a {
           font-size: 1.2rem;
           font-weight: bold;
-          @include mq-up() {
+          @include mq-md() {
             font-size: 1.3rem;
           }
         }
@@ -70,7 +70,7 @@ export default defineComponent({
     font-weight: 600;
     text-align: center;
     color: $deepGray;
-    @include mq-up() {
+    @include mq-md() {
       margin-top: 30px;
     }
   }

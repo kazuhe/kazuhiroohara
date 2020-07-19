@@ -80,7 +80,7 @@ export default defineComponent({
   background: $subColor;
   padding: 0 15px;
   z-index: 1;
-  @include mq-up() {
+  @include mq-md() {
     align-items: center;
     justify-content: center;
     width: 230px;
@@ -92,7 +92,7 @@ export default defineComponent({
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    @include mq-up() {
+    @include mq-md() {
       display: block;
     }
   }
@@ -103,7 +103,7 @@ export default defineComponent({
       width: 100px;
       margin: 0 auto;
       fill: #fff;
-      @include mq-up() {
+      @include mq-md() {
         width: 120px;
       }
     }
@@ -117,7 +117,7 @@ export default defineComponent({
       display: block;
       fill: #fff;
     }
-    @include mq-up() {
+    @include mq-md() {
       display: none;
     }
   }
@@ -130,7 +130,7 @@ export default defineComponent({
     background: $subColor;
     padding: 0 15px;
     display: none;
-    @include mq-up() {
+    @include mq-md() {
       display: block;
       position: relative;
       top: 30px;
@@ -143,7 +143,7 @@ export default defineComponent({
       li {
         padding: 13px 0;
         border-top: 1px solid $deepGray;
-        @include mq-up() {
+        @include mq-md() {
           border-top: none;
           text-align: center;
         }
@@ -154,7 +154,7 @@ export default defineComponent({
           font-size: 1.5rem;
           font-weight: bold;
           text-decoration: none;
-          @include mq-up() {
+          @include mq-md() {
             display: inline;
             &.router-link-active {
               color: $mainColor;
@@ -165,7 +165,7 @@ export default defineComponent({
             width: 15px;
             margin-right: 10px;
             fill: #fff;
-            @include mq-up() {
+            @include mq-md() {
               display: none;
             }
           }
@@ -190,7 +190,7 @@ export default defineComponent({
       width: 20px;
       cursor: pointer;
     }
-    @include mq-up() {
+    @include mq-md() {
       justify-content: center;
       position: absolute;
       top: auto;

@@ -49,7 +49,7 @@ export default defineComponent({
 <style lang="scss">
 .lead {
   margin-top: 30px;
-  @include mq-up() {
+  @include mq-md() {
     margin-top: 50px;
   }
 
@@ -81,7 +81,7 @@ export default defineComponent({
       );
       z-index: -1;
     }
-    @include mq-up() {
+    @include mq-md() {
       margin-top: -60px;
       margin-left: -80px;
       margin-right: -80px;

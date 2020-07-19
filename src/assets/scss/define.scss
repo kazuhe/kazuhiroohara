@@ -28,13 +28,13 @@ $breakpoint-down: ( // max-width
   'lg': 'screen and (max-width: 999px)',
   'xl': 'screen and (max-width: 1199px)',
 ) !default;
-@mixin mq-up($breakpoint: md) { //メインで使用するブレイクポイントを指定
+@mixin mq-md($breakpoint: md) { //メインで使用するブレイクポイントを指定
   @media #{map-get($breakpoint-up, $breakpoint)} {
     @content;
   }
 }
-@mixin mq-down($breakpoint: md) { //メインで使用するブレイクポイントを指定
-  @media #{map-get($breakpoint-down, $breakpoint)} {
+@mixin mq-lg($breakpoint: lg) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
     @content;
   }
 }
@@ -46,19 +46,19 @@ $breakpoint-down: ( // max-width
 */
 @mixin root() {
   padding-top: 60px;
-  @include mq-up() {
+  @include mq-md() {
     padding-top: 0;
   }
 }
 @mixin inner() {
   padding: 0 15px;
-  @include mq-up() {
+  @include mq-md() {
     margin-left: 230px;
     padding: 0 80px;
   }
 }
 @mixin maxWidth() {
-  @include mq-up() {
+  @include mq-md() {
     max-width: 800px;
     margin: 0 auto;
   }
