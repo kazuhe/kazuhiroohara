@@ -18,7 +18,7 @@ export default defineComponent({
   },
   props: {
     lists: {
-      type: Array
+      type: Object
     }
   }
 })

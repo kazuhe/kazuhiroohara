@@ -6,12 +6,13 @@
       <Lead
         title="Works"
         subTitle="個人開発での制作実績"
-        text="積極的にモダンな技術に挑戦することを目的に個人開発に取り組んでいます。今まで作成したWebサイトやWebアプリを紹介しています。"
-        image="works.jpg"
+        text="積極的にモダンな技術に触れることを目的に個人開発に取り組んでいます。簡易ではありますが今まで作成したWebサイトやWebアプリを紹介しています。"
+        image="pages/works/works.jpg"
       />
       <Section>
+        <Title h2="observable" p="タスク管理カレンダー" />
         <div class="works_flex">
-          <Carousel :carouselElement="carousel.element">
+          <Carousel class="works_content" :carouselElement="carousel.element">
             <Slide>
               <img src="@/assets/img/pages/works/observable01.jpg" alt="" />
             </Slide>
@@ -26,19 +27,12 @@
             </Slide>
           </Carousel>
           <div class="works_content">
-            <Title h2="observable" p="タスク管理カレンダー" />
+            <p>
+              仕事でのスケジュール管理を目的にVue.jsの2系を使用して制作しました。勉強も兼ねてTypeScriptも導入しており、アプリ内の各案件のデータはFirebaseを使って管理しています。カレンダーの描画に苦戦しました。
+            </p>
+            <Link github="https://github.com/kazuhe/observable" />
           </div>
         </div>
-      </Section>
-      <Section :gray="true">
-        <Title h2="observable" p="タスク管理カレンダー" />
-        <p class="works_content">
-          私が最も大事にしている「コト」は人を想いやり尊重するコトです。
-          人とは、クライアントはもちろん共に働く仲間やターゲットとするユーザー全てを意味しています。人を想い行動することでよりよいサービスを提供することができ、自分自身も成長できると考えます。
-        </p>
-      </Section>
-      <Section>
-        <Title h2="My History" p="簡単な職歴" />
       </Section>
     </div>
     <Footer />
@@ -55,6 +49,7 @@ import Lead from '@/components/modules/Lead.vue'
 import Title from '@/components/modules/Title.vue'
 import Carousel from '@/components/modules/Carousel.vue'
 import Slide from '@/components/modules/Slide.vue'
+import Link from '@/components/modules/Link.vue'
 
 export default defineComponent({
   name: 'Works',
@@ -66,7 +61,8 @@ export default defineComponent({
     Lead,
     Title,
     Carousel,
-    Slide
+    Slide,
+    Link
   },
   setup() {
     const carousel = reactive({
@@ -141,7 +137,8 @@ export default defineComponent({
       > div,
       > ul {
         width: 50%;
-        margin: 0 15px;
+        margin-left: 15px;
+        margin-right: 15px;
       }
     }
   }

@@ -7,7 +7,7 @@
         title="About Us"
         subTitle="Kazuhiro Ohara / 大原 一浩"
         text="2017年からWebフロントエンドエンジニアとして活動しており、これまで数多くのWebサイトやWebアプリの開発に携わってきました。ヒアリングからWebサイトワイヤーフレームの作成などのディレクション業務まで幅広く経験しています。"
-        image="about.jpg"
+        image="pages/about/about.jpg"
       />
       <Section>
         <Title h2="Experience and skills" p="今までの経験とスキル" />
@@ -21,7 +21,7 @@
         </p>
         <Profile
           class="about_content"
-          image="profile.jpg"
+          image="pages/about/profile.jpg"
           name="Kazuhiro Ohara"
           github="https://github.com/kazuhe"
           twitter="https://twitter.com/kazuhiroohara_"

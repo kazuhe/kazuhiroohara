@@ -7,11 +7,9 @@
           <li><router-link to="/about">About</router-link></li>
           <li><router-link to="/works">Works</router-link></li>
           <li>
-            <a href="https://archive.kazuhiroohara.jp/"><Book />Archive</a>
+            <a href="https://archive.kazuhiroohara.jp/">Archive</a>
           </li>
-          <li>
-            <router-link to="/"><Plane />Contact</router-link>
-          </li>
+          <li><router-link to="/">Contact</router-link></li>
           <li>
             <router-link to="/privacypolicy">Privacypolicy</router-link>
           </li>

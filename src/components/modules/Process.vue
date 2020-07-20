@@ -18,7 +18,7 @@ export default defineComponent({
   name: 'Process',
   props: {
     processes: {
-      type: Array
+      type: Object
     }
   }
 })

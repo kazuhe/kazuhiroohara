@@ -3,7 +3,7 @@
     <div class="lead_inner">
       <h1 class="lead_title">{{ title }}</h1>
       <p class="lead_subTitle">{{ subTitle }}</p>
-      <p class="lead_text">{{ text }}</p>
+      <p v-if="text" class="lead_text">{{ text }}</p>
     </div>
   </div>
 </template>
@@ -23,10 +23,12 @@ export default defineComponent({
       required: true
     },
     text: {
-      type: String
+      type: String,
+      required: false
     },
     image: {
-      type: String
+      type: String,
+      required: false
     }
   },
   setup(props) {

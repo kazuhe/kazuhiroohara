@@ -23,7 +23,7 @@ export default defineComponent({
   },
   props: {
     breadcrumbs: {
-      type: Array
+      type: Object
     }
   }
 })

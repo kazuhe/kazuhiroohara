@@ -3,28 +3,22 @@
     <img :src="loadImage()" alt="" />
     <div>
       <h3 class="profile_name">{{ name }}</h3>
-      <p v-if="github" class="profile_link">
-        <Github />
-        <a :href="github" target="_blank" rel="nofollow">{{ github }}</a>
-      </p>
-      <p v-if="twitter" class="profile_link">
-        <Twitter />
-        <a :href="twitter" target="_blank" rel="nofollow">{{ twitter }}</a>
-      </p>
+      <Link
+        github="https://github.com/kazuhe"
+        twitter="https://twitter.com/kazuhiroohara_"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Twitter from '@/components/svg/Twitter.vue'
-import Github from '@/components/svg/Github.vue'
+import Link from '@/components/modules/Link.vue'
 
 export default defineComponent({
   name: 'Profile',
   components: {
-    Twitter,
-    Github
+    Link
   },
   props: {
     image: {
@@ -34,12 +28,6 @@ export default defineComponent({
     name: {
       type: String,
       required: true
-    },
-    github: {
-      type: String
-    },
-    twitter: {
-      type: String
     }
   },
   setup(props) {
@@ -69,20 +57,6 @@ export default defineComponent({
 
   &_name {
     font-weight: 600;
-  }
-
-  &_link {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    a {
-      font-size: 1.2rem;
-    }
-    svg {
-      fill: $deepGray;
-      width: 20px;
-      margin-right: 5px;
-    }
   }
 }
 </style>
