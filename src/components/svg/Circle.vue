@@ -1,9 +1,12 @@
 <template>
-  <svg viewBox="-10 -10 220 220">
-    <path
-      d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z"
-      stroke-dashoffset="629"
-    ></path>
+  <svg viewBox="25 25 50 50" class="circular-loader" data-v-951ea842>
+    <circle
+      cx="50"
+      cy="50"
+      r="22"
+      style="stroke-dashoffset:140;"
+      data-v-951ea842
+    ></circle>
   </svg>
 </template>
 

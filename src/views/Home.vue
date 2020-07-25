@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Header />
+    <Mainvisual />
     <div class="home_inner">
       <Section>
         <Title h2="Archive" p="最新の記事" />
@@ -45,6 +46,7 @@ import Carousel from '@/components/modules/Carousel.vue'
 import Slide from '@/components/modules/Slide.vue'
 import Title from '@/components/modules/Title.vue'
 import Button from '@/components/modules/Button.vue'
+import Mainvisual from '@/components/modules/Mainvisual.vue'
 import axios from 'axios'
 
 export default defineComponent({
@@ -56,7 +58,8 @@ export default defineComponent({
     Carousel,
     Slide,
     Title,
-    Button
+    Button,
+    Mainvisual
   },
   setup() {
     const posts = reactive({

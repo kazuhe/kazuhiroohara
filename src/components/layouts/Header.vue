@@ -79,7 +79,7 @@ export default defineComponent({
   height: 60px;
   background: $subColor;
   padding: 0 15px;
-  z-index: 1;
+  z-index: 99;
   @include mq-md() {
     align-items: center;
     justify-content: center;
