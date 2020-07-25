@@ -19,7 +19,7 @@
     </ul>
     <div class="mainvisual_wrap">
       <div class="mainvisual_text">
-        <h1>THE TRANSFORM BRANDS<br />FROM THE INSIDE OUT.</h1>
+        <h1>THE TRANSFORM BRANDS <br />FROM THE INSIDE OUT.</h1>
         <p>By Kazuhiro Ohara</p>
       </div>
       <ul class="mainvisual_navi">
@@ -28,6 +28,7 @@
           <button :class="{ '-current': getCurrent(index) }" />
         </li>
       </ul>
+      <div class="mainvisual_scroll">SCROLL<i></i></div>
     </div>
   </div>
 </template>
@@ -46,9 +47,9 @@ export default defineComponent({
       imageWidth: 0,
       offset: 0,
       images: [
-        require('@/assets/img/pages/about/about.jpg'),
-        require('@/assets/img/pages/works/works.jpg'),
-        require('@/assets/img/pages/privacypolicy/privacypolicy.jpg')
+        require('@/assets/img/pages/home/mv1.jpg'),
+        require('@/assets/img/pages/home/mv2.jpg'),
+        require('@/assets/img/pages/home/mv3.jpg')
       ]
     })
 
@@ -163,6 +164,7 @@ export default defineComponent({
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 1;
     @include mq-md() {
       padding: 0 80px;
     }
@@ -173,7 +175,7 @@ export default defineComponent({
     position: absolute;
     bottom: 30px;
     left: 15px;
-    z-index: 1;
+    right: 15px;
     @include mq-md() {
       bottom: 50px;
       left: 80px;
@@ -182,6 +184,9 @@ export default defineComponent({
     h1 {
       color: #fff;
       line-height: 1.1;
+      @include mq-md() {
+        font-size: 4rem;
+      }
       br {
         display: none;
         @include mq-md() {
@@ -204,7 +209,6 @@ export default defineComponent({
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
     li {
       display: flex;
       align-items: center;
@@ -242,6 +246,104 @@ export default defineComponent({
             stroke-dashoffset: 0;
           }
         }
+      }
+    }
+  }
+
+  &_scroll {
+    position: absolute;
+    top: 125px;
+    right: 40px;
+    padding: 15px 90px 15px 0;
+    transform: rotate(90deg);
+    transform-origin: right bottom;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    line-height: 1;
+    @include mq-md() {
+      right: 70px;
+      padding: 30px 90px 30px 0;
+    }
+    &::before {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 8rem;
+      height: 1px;
+      background: #fff;
+      content: '';
+      transform: translate(0, -1px);
+    }
+    i {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 7.6rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      margin-top: -0.5rem;
+      animation: fv-scroll 3s linear 0s infinite normal;
+      &::before {
+        width: 4rem;
+        height: 4rem;
+        margin: -2rem 0 0 -2rem;
+        transform: scale(0.2);
+        animation: fv-scroll-dot 3s linear 0s infinite normal;
+        opacity: 1;
+      }
+      &::after,
+      &::before {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        background: $mainColor;
+        content: '';
+      }
+      &::after {
+        width: 0.8rem;
+        height: 0.8rem;
+        margin: -0.4rem 0 0 -0.4rem;
+      }
+    }
+    @keyframes fv-scroll {
+      0% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      45% {
+        opacity: 0;
+      }
+      75% {
+        transform: translateX(1000%);
+        animation-timing-function: linear;
+        opacity: 0;
+      }
+      to {
+        transform: translateX(1000%);
+        opacity: 0;
+      }
+    }
+    @keyframes fv-scroll-dot {
+      0% {
+        transform: scale(0.2);
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        opacity: 1;
+      }
+      75% {
+        opacity: 0.1;
+      }
+      to {
+        transform: scale(1);
+        opacity: 0.1;
       }
     }
   }
