@@ -86,11 +86,11 @@ export default defineComponent({
       let startX = 0
       let moveX = 0
       target.addEventListener('touchstart', (e: TouchEvent) => {
-        e.preventDefault()
+        // e.preventDefault()
         startX = e.touches[0].pageX
       })
       target.addEventListener('touchmove', (e: TouchEvent) => {
-        e.preventDefault()
+        // e.preventDefault()
         moveX = e.changedTouches[0].pageX
       })
       target.addEventListener('touchend', () => {
@@ -126,14 +126,12 @@ export default defineComponent({
   overflow: hidden;
   &_list {
     display: flex;
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease;
   }
 
   &_navi {
-    position: absolute;
     left: 50%;
     right: 50%;
-    bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,37 +151,40 @@ export default defineComponent({
   }
 
   &_btn {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    top: 50%;
-    bottom: 50%;
-    width: 100%;
-    padding: 0 15px;
-    &_prev,
-    &_next {
-      background-color: rgba(255, 255, 255, 0.7);
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
+    display: none;
+    @include mq-md() {
+      position: absolute;
       display: flex;
       align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      svg {
-        width: 10px;
-        fill: $mainColor;
+      justify-content: space-between;
+      top: 50%;
+      bottom: 50%;
+      width: 100%;
+      padding: 0 15px;
+      &_prev,
+      &_next {
+        background-color: rgba(255, 255, 255, 0.7);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        svg {
+          width: 10px;
+          fill: $mainColor;
+        }
       }
-    }
-    &_prev {
-      svg {
-        transform: rotate(90deg);
+      &_prev {
+        svg {
+          transform: rotate(90deg);
+        }
       }
-    }
-    &_next {
-      svg {
-        transform: rotate(270deg);
+      &_next {
+        svg {
+          transform: rotate(270deg);
+        }
       }
     }
   }
